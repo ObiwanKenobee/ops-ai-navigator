@@ -1,4 +1,3 @@
-
 import React from 'react';
 import AppShell from '@/components/layout/AppShell';
 import CovenantGovernanceLayer from '@/components/covenant/CovenantGovernanceLayer';
@@ -8,8 +7,6 @@ import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 
 const Covenant = () => {
-  const Handshake = Users; // Using Users as a substitute since Handshake is not available
-
   return (
     <AppShell>
       <div className="space-y-4">

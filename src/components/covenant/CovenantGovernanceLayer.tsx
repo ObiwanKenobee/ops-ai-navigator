@@ -1,12 +1,10 @@
 
 import React from 'react';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Clock, HandShake, Repeat, Users } from 'lucide-react';
+import { Clock, Handshake, Repeat, Users } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
 
 const CovenantGovernanceLayer = () => {
-  const HandShake = Users; // Using Users as a substitute since HandShake is not available
-
   return (
     <Card className="border-atlas-accent/10 bg-atlas-carbon/50">
       <CardHeader className="pb-2">
@@ -19,7 +17,7 @@ const CovenantGovernanceLayer = () => {
       <CardContent className="space-y-4">
         <div className="bg-atlas-navy/30 p-3 rounded-md">
           <h3 className="text-sm font-medium flex items-center gap-2">
-            <HandShake className="h-4 w-4 text-atlas-accent" />
+            <Handshake className="h-4 w-4 text-atlas-accent" />
             Active Covenants
           </h3>
           <div className="grid grid-cols-2 gap-2 mt-2">
