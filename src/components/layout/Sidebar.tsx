@@ -9,7 +9,11 @@ import {
   Bot, 
   Settings, 
   Users, 
-  HelpCircle 
+  HelpCircle,
+  Book,
+  Shield,
+  Clock,
+  MessageSquare
 } from 'lucide-react';
 import { Link, useLocation } from 'react-router-dom';
 
@@ -23,6 +27,11 @@ const Sidebar = () => {
     { id: 'carbon', name: 'Carbon Intel', icon: Leaf, path: '/carbon-intel' },
     { id: 'analytics', name: 'Analytics', icon: BarChart3, path: '/analytics' },
     { id: 'ai-assistant', name: 'AI Assistant', icon: Bot, path: '/ai-assistant' },
+    { id: 'divider-1', type: 'divider' },
+    { id: 'alexandria', name: 'Operational Alexandria', icon: Book, path: '/alexandria' },
+    { id: 'stoic-mind', name: 'Stoic Mind', icon: Shield, path: '/stoic-mind' },
+    { id: 'covenant', name: 'Covenant Protocol', icon: Clock, path: '/covenant' },
+    { id: 'mythos', name: 'Mythos Engine', icon: MessageSquare, path: '/mythos' },
   ];
 
   const bottomNavItems = [
@@ -46,23 +55,27 @@ const Sidebar = () => {
         <p className="text-xs text-muted-foreground mt-1">Intelligent Operations OS</p>
       </div>
 
-      <nav className="flex-1 pt-4 px-2">
+      <nav className="flex-1 pt-4 px-2 overflow-y-auto">
         <div className="space-y-1">
-          {navItems.map(item => (
-            <Link
-              key={item.id}
-              to={item.path}
-              className={cn(
-                "flex items-center w-full gap-3 px-3 py-2 text-sm font-medium rounded-md transition-colors",
-                currentPath === item.path 
-                  ? "bg-atlas-accent/10 text-atlas-teal" 
-                  : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
-              )}
-            >
-              <item.icon className="h-5 w-5" />
-              {item.name}
-            </Link>
-          ))}
+          {navItems.map(item => 
+            item.type === 'divider' ? (
+              <div key={item.id} className="h-px bg-atlas-accent/10 my-2 mx-3" />
+            ) : (
+              <Link
+                key={item.id}
+                to={item.path}
+                className={cn(
+                  "flex items-center w-full gap-3 px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                  currentPath === item.path 
+                    ? "bg-atlas-accent/10 text-atlas-teal" 
+                    : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+                )}
+              >
+                <item.icon className="h-5 w-5" />
+                {item.name}
+              </Link>
+            )
+          )}
         </div>
       </nav>
 
