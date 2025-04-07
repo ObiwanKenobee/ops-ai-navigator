@@ -14,6 +14,9 @@ import Alexandria from "./pages/Alexandria";
 import StoicMind from "./pages/StoicMind";
 import Covenant from "./pages/Covenant";
 import Mythos from "./pages/Mythos";
+import Settings from "./pages/Settings";
+import Team from "./pages/Team";
+import Help from "./pages/Help";
 
 const queryClient = new QueryClient();
 
@@ -33,6 +36,9 @@ const App = () => (
           <Route path="/stoic-mind" element={<StoicMind />} />
           <Route path="/covenant" element={<Covenant />} />
           <Route path="/mythos" element={<Mythos />} />
+          <Route path="/settings" element={<Settings />} />
+          <Route path="/team" element={<Team />} />
+          <Route path="/help" element={<Help />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

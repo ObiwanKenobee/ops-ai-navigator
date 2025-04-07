@@ -35,9 +35,9 @@ const Sidebar = () => {
   ];
 
   const bottomNavItems = [
-    { id: 'settings', name: 'Settings', icon: Settings, path: '#' },
-    { id: 'team', name: 'Team', icon: Users, path: '#' },
-    { id: 'help', name: 'Help', icon: HelpCircle, path: '#' },
+    { id: 'settings', name: 'Settings', icon: Settings, path: '/settings' },
+    { id: 'team', name: 'Team', icon: Users, path: '/team' },
+    { id: 'help', name: 'Help', icon: HelpCircle, path: '/help' },
   ];
 
   return (
@@ -85,7 +85,12 @@ const Sidebar = () => {
             <Link
               key={item.id}
               to={item.path}
-              className="flex items-center w-full gap-3 px-3 py-2 text-sm font-medium rounded-md text-muted-foreground hover:bg-muted/50 hover:text-foreground transition-colors"
+              className={cn(
+                "flex items-center w-full gap-3 px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                currentPath === item.path 
+                  ? "bg-atlas-accent/10 text-atlas-teal" 
+                  : "text-muted-foreground hover:bg-muted/50 hover:text-foreground"
+              )}
             >
               <item.icon className="h-4 w-4" />
               {item.name}
